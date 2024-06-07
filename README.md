@@ -33,6 +33,7 @@ Embark on your journey to mastering R in bioinformatics. Follow the tutorials, p
 =======
 # Bioinformatics-101
 
+
 ## Embarking on a Journey to Bioinformatics Mastery with R, Python, and Git
 
 ---
@@ -76,4 +77,3 @@ This repository is both a comprehensive record and a tutorial, documenting my st
 ---
 
 Let's embark on this journey together! Join me in this enriching adventure, and let's unlock the wonders of bioinformatics step by step. Together, we'll pave a clear path for future bioinformatics enthusiasts.
->>>>>>> master
