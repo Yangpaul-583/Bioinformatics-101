@@ -21,7 +21,7 @@ The path is broken into 7 main sections.
 
 ## Look At Google Trends Data For TV Show
 ### Tv show data
-![Alt text]([https://content.codecademy.com/programs/analyze-data-with-r/teaser/teaser3.png](https://content.codecademy.com/programs/analyze-data-with-r/teaser/teaser1.png))
+![Alt text](https://content.codecademy.com/programs/analyze-data-with-r/teaser/teaser1.png)
 
 
 ## Create A Statistical Model For Businesses
