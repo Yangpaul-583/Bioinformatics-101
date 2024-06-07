@@ -31,7 +31,7 @@ Here’s a preview of some of the projects featured in this Skill Path:
 ### Election Resultsa domed capital building
 ![Alt text](https://content.codecademy.com/projects/project_thumbnails/ds-path/election-binomial.jpeg)
 
-Use binomial distributions to analyze election results
+`Use binomial distributions to analyze election results`
 
 Learning a programming language can be like learning a spoken language. It’s an incredible feeling when someone speaks to you and you understand what they’re saying! But it’s much more powerful when you are able to speak in response, using the new language with others.
 
