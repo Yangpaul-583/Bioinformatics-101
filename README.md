@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # R-for-Beginners
 
 ## Welcome to the R-for-Beginners Track
