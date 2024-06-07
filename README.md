@@ -23,7 +23,36 @@ Git is a powerful version control system that allows you to track changes, manag
 
 ### Getting Started
 
-To get started, follow the step-by-step tutorials and exercises provided in this track. Each module is designed to build on the previous one, ensuring a thorough and progressive learning experience.
+To begin, follow the step-by-step tutorials and exercises provided in this track. Each module is designed to build on the previous one, ensuring a thorough and progressive learning experience.
+
+---
+
+### Module Overview
+
+#### Module 1: Introduction to Version Control with Git
+- What is version control?
+- Benefits of using Git.
+- Installing Git and setting up your environment.
+
+#### Module 2: Git Basics
+- Creating a repository.
+- Basic Git commands: `init`, `clone`, `add`, `commit`.
+- Understanding the working directory, staging area, and repository.
+
+#### Module 3: Working with Branches
+- Creating and managing branches.
+- Merging branches and resolving conflicts.
+- Best practices for branching.
+
+#### Module 4: Collaborating with Git
+- Working with remote repositories: `push`, `pull`, `fetch`.
+- Using GitHub for collaboration.
+- Pull requests and code reviews.
+
+#### Module 5: Advanced Git Techniques
+- Rebasing and cherry-picking.
+- Stashing changes.
+- Using Git hooks and customizing your Git workflow.
 
 ---
 
