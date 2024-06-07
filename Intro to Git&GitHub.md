@@ -1,4 +1,4 @@
-#Introduction: Git & GitHub
+# Introduction: Git & GitHub
 
 
 In this part, we will cover the basic functions of Git & GitHub.
@@ -9,12 +9,12 @@ We will go over how to integrate Git with GitHub, one of the most-used web appli
 
 By the end of this journey, you’ll be able to:
 
--Create a Git project and setup a remote copy on GitHub.
--Label code changes and move between different versions of your project.
--Write text on the GitHub interface using Markdown to describe your project and code changes.
--Create branches in your Git project so you can collaborate with others.
--Use Git commands to make sure your local copy of code matches the remote copy on GitHub.
--Use GitHub pull requests to discuss code changes with others.
--Be familiar with Git rebase, GitHub repository settings, and how to keep a remote repository organized.
--How to create a GitHub profile and explore code written by others
--Be familiar with intermediate to advanced GitHub features that allow you manage tasks within GitHub itself and automate actions
+- Create a Git project and setup a remote copy on GitHub.
+- Label code changes and move between different versions of your project.
+- Write text on the GitHub interface using Markdown to describe your project and code changes.
+- Create branches in your Git project so you can collaborate with others.
+- Use Git commands to make sure your local copy of code matches the remote copy on GitHub.
+- Use GitHub pull requests to discuss code changes with others.
+- Be familiar with Git rebase, GitHub repository settings, and how to keep a remote repository organized.
+- How to create a GitHub profile and explore code written by others
+- Be familiar with intermediate to advanced GitHub features that allow you manage tasks within GitHub itself and automate actions
