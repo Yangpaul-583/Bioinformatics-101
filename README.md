@@ -30,7 +30,3 @@ To begin, follow the step-by-step tutorials and exercises provided in this track
 ### Let's Begin!
 
 Embark on your journey to mastering Python in bioinformatics. Follow the tutorials, practice consistently, and don't hesitate to seek help when needed. Together, we'll make your learning journey both enjoyable and fruitful.
-
----
-
-Ready to start? [Click here to begin your first lesson!](link-to-first-lesson)
