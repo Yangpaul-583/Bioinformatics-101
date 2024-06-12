@@ -1,0 +1,176 @@
+# Day06
+## 设置镜像
+镜像网站相当于主网站的副本，访问主网站存在障碍时，访问镜像网站也可。
+存放R包的网站位于国外，选择国内的镜像可加快访问速度。
+运行这两行代码↓可以搞定
+```{r}
+options("repos"=c(CRAN="http://mirrors.tuna.tsinghua.edu.cn/CRAN/"))
+options(BioC_mirror="http://mirrors.tuna.tsinghua.edu.cn/bioconductor/")
+```
+
+## R包安装
+安装来自cran的stringr包：
+```{r}
+install.packages("stringr")
+```
+安装来自Biocductor的limma包：
+```{r}
+BiocManager::install("limma")
+```
+## R包加载
+library和require，两个函数均可。使用一个包，是需要先安装再加载，才能使用包里的函数。
+```{r}
+options("repos" = c(CRAN="https://mirrors.tuna.tsinghua.edu.cn/CRAN/")) 
+options(BioC_mirror="http://mirrors.tuna.tsinghua.edu.cn/bioconductor/")
+install.packages("dplyr")
+library(dplyr)
+```
+## dplyr五个基础函数
+### mutate(),新增列
+```{r}
+test <- iris[c(1:2,51:52,101:102),]
+mutate(test, new = Sepal.Length * Sepal.Width)
+```
+### select(),按列筛选
+```{r}
+select(test,1)
+```
+```{r}
+select(test,c(1,5))
+```
+```{r}
+select(test,Sepal.Length)
+```
+```{r}
+select(test, Petal.Length, Petal.Width)
+```
+```{r}
+vars <- c("Petal.Length", "Petal.Width")
+select(test, one_of(vars))
+```
+### filter()筛选行
+```{r}
+filter(test, Species == "setosa")
+```
+```{r}
+filter(test, Species == "setosa"&Sepal.Length > 5 )
+```
+```{r}
+filter(test, Species %in% c("setosa","versicolor"))
+```
+### arrange(),按某1列或某几列对整个表格进行排序
+```{r}
+arrange(test, Sepal.Length)#默认从小到大排序
+```
+```{r}
+arrange(test, desc(Sepal.Length))#用desc从大到小
+```
+### summarise()：汇总
+```{r}
+summarise(test, mean(Sepal.Length), sd(Sepal.Length))#计算Sepal.Length的平均值和标准差
+```
+```{r}
+# 先按照Species分组，计算每组Sepal.Length的平均值和标准差
+group_by(test, Species)
+```
+```{r}
+summarise(group_by(test, Species),mean(Sepal.Length), sd(Sepal.Length))
+```
+
+
+## dplyr两个实用技能
+### 管道操作 %>% (cmd/ctr + shift + M)
+```{r}
+test %>% 
+  group_by(Species) %>% 
+  summarise(mean(Sepal.Length), sd(Sepal.Length))
+```
+### count统计某列的unique值
+```{r}
+count(test, Species)
+```
+
+
+## dplyr处理关系数据
+### 将2个表进行连接
+```{r}
+test1 <- data.frame(x = c('b','e','f','x'), 
+                    z = c("A","B","C",'D'))
+test1
+```
+```{r}
+test2 <- data.frame(x = c('a','b','c','d','e','f'), 
+                    y = c(1,2,3,4,5,6))
+test2 
+```
+#### 內连inner_join,取交集
+```{r}
+inner_join(test1, test2, by = "x")
+```
+#### 左连left_join
+```{r}
+left_join(test1, test2, by = 'x')
+```
+```{r}
+left_join(test2, test1, by = 'x')
+```
+
+
+#### 全连full_join
+```{r}
+full_join( test1, test2, by = 'x')
+```
+#### 半连接：返回能够与y表匹配的x表所有记录semi_join
+```{r}
+semi_join(x = test1, y = test2, by = 'x')
+```
+#### 反连接：返回无法与y表匹配的x表的所记录anti_join
+```{r}
+anti_join(x = test2, y = test1, by = 'x')
+```
+
+
+
+#### 简单合并
+在相当于base包里的cbind()函数和rbind()函数;注意，bind_rows()函数需要两个表格列数相同，而bind_cols()函数则需要两个数据框有相同的行数
+```{r}
+test1 <- data.frame(x = c(1,2,3,4), y = c(10,20,30,40))
+test1
+```
+```{r}
+test2 <- data.frame(x = c(5,6), y = c(50,60))
+test2
+```
+```{r}
+test3 <- data.frame(z = c(100,200,300,400))
+test3
+```
+```{r}
+bind_rows(test1, test2)
+```
+```{r}
+bind_cols(test1, test3)
+```
+
+
+## 函数和R包应该怎么学习
+### (1) 快速查看函数帮助文档
+
+```{r}
+?sd
+```
+一般来说，我们不会需要学习一个R包里的所有函数，或者是一个函数里的所有参数，这太离谱了。
+
+如果是在使用别人的代码时，遇到一个不认识的函数想要学习，可以查看他的帮助文档，可以解决90%的“xx函数什么意思”，“xx参数什么意思”的问题。很多都是现查现用。
+
+### (2)找R包介绍页面（搜）
+
+上面可能会有一些可供下载的文件
+
+比如这里的A brief introduction to limma 和limma User's Guide。
+### (3) Vignettes
+
+Vignettes这个单词硬翻译会翻译成“小插图”，其实就是作者写的网页版教程，不是每个R包都有的，可以运行代码试试看，没有就是没有了。
+```{r}
+browseVignettes("limma")
+```
